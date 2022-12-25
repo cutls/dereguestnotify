@@ -19,7 +19,7 @@
         setTimeout(() => doc.innerText = '', 5000)
     }
 
-    const URL = location.protocol + '//' + location.host + "/model/";
+    const URL = location.protocol === 'https:' ? location.href.replace('index.html', '') + "model/" : location.protocol + '//' + location.host + "/model/";
 
     async function createModel() {
         const checkpointURL = URL + "model.json"; // model topology
